@@ -7,7 +7,7 @@ public class Conexion {
     
     Connection conectar = null;
     
-    public Connection CONECTAR(){
+    public Connection conectar(){
         
         try {
             
