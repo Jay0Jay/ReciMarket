@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cts.modelo.VO;
+package recimarket.modelo.VO;
 
 /**
  *
  * @author juan.rojas
  */
-public class usuarios {
+public class Usuarios {
     
 }
