@@ -12,17 +12,15 @@ public class Conexion {
         try {
             
             
-            Class.forName("");
+            Class.forName("org.mariadb.jdbc.Driver");
                     
-            conectar = DriverManager.getConnection("");
-            
-            System.out.println("Conexion exitosa");
+            conectar = DriverManager.getConnection("jdbc:mariadb:");
+            System.out.println("Conexión Exitosa a la base de datos.");
                     
         } catch (Exception e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
-            System.out.println("Conexion exitosa");
-            System.out.println("ejemplo");
+
         }
         return conectar;
     }
