@@ -30,6 +30,7 @@ public class Conexion {
             System.out.println(e.getMessage());
             e.printStackTrace();
             System.out.println("Conexion exitosa");
+            System.out.println("ejemplo");
         }
         return conectar;
     }
