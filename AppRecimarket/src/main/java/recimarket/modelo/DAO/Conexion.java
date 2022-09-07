@@ -2,32 +2,46 @@
 package recimarket.modelo.DAO;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 public class Conexion {
     
-    Connection conectar = null;
-    private String host = "127.0.0.1";
-    private String port = "3306";
-    private String dbName = "dbrecimarket";
-    private String userName ="root";
-    private  String password = "admin";
+    private static final String JDBC_URL = "jdbc:mariadb://localhost:3386/recimarket";
+    private static final String JDBC_USER = "root";
+    private static final String JDBC_PASSWORD = "admin";
+    private Connection conexion;
+    private static Conexion instancia;
     
-    public Connection conectar(){
-        
+    private Conexion(){
+        conexion = null;
+    }
+    
+    // conexión de la base de datos
+    public Connection conectar() throws SQLException{
         try {
-            
-            
-            Class.forName("org.mysql.jdbc.Driver");
-            String url =  "jdbc:mysql://"+ this.host + ":" + this.port + "/" + this.dbName;
-            conectar = DriverManager.getConnection(url, this.userName, this.password);
-            System.out.println("Conexión Exitosa a la base de datos.");
-                    
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-
+            conexion=DriverManager.getConnection(JDBC_URL,JDBC_USER,JDBC_PASSWORD); 
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
-        return conectar;
+        return this.conexion;
+    }
+    
+    // Método para cerrar la conexión de la BD
+    public void desconectar(){
+        try {
+            this.conexion.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }
+    
+    // Retorna una unica instancia de la clase Conexion
+    public synchronized static Conexion getInstancia(){
+        if (instancia==null){
+            instancia=new Conexion();
+        }
+        return instancia;
     }
     
 }
