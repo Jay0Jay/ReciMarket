@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="plantilla/plantilla :: head"></head>
+    <body>
+        <header th:replace="plantilla/plantilla :: header"></header>
+        <div class="container">
+            <h2 th:text="${titulo}"></h2>
+        </div>
+          <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombres</th>
+                        <th scope="col">Apellidos</th>
+                        <th scope="col">Doc. Identificacón</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Correo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="us:${usuarios}">
+                        <th scope="row" th:text="${us.idUsuario}"></th>
+                        <td th:text="${us.nombres}"></td>
+                        <td th:text="${us.apellidos}"></td>
+                        <td th:text="${us.numeroIdentificacion}"></td>
+                        <td th:text="${us.direccion}"></td>
+                        <td th:text="${us.telefono}"></td>
+                        <td th:text="${us.correo}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <footer th:replace="plantilla/plantilla :: footer"></footer>
+    </body>
+</html>
