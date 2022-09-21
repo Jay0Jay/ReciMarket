@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -57,13 +57,13 @@
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Recimarket</a></h1>
+      <h1 class="logo me-auto"><a th:href="@{/}">Recimarket</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.html">Inicio</a></li>
+          <li><a class="nav-link scrollto active" th:href="@{/}">Inicio</a></li>
          
           <li class="dropdown"><a href="#"><span>Sobre el proyecto</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -73,7 +73,7 @@
               <li><a href="#">Alcancé del proyecto</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="aprende.html"><span>Aprende a reciclar</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a th:href="@{/aprende}"><span>Aprende a reciclar</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="plastico.html">plastico</a></li>
               <li><a href="madera.html">Madera</a></li>
@@ -83,9 +83,10 @@
               <li><a href="papel.html">Papel</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="venta.html">Vende y compra</a></li>
-          <li><a class="nav-link scrollto" href="contactos.html">Contactos</a></li>
-          <li><a class="getstarted scrollto" href="login.html">Registrate aqui</a></li>
+          <li><a class="nav-link scrollto" th:href="@{/venta}">Vende y compra</a></li>
+          <li><a class="nav-link scrollto" th:href="@{/contactos}">Contactos</a></li>
+          <li><a class="getstarted scrollto" th:href="@{/registro}">Registrate aqui</a></li>
+          <li><a class="getstarted scrollto" th:href="@{/iniciosesion}">Iniciar sesión</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Inicio de sesion</title>
+    <link rel="stylesheet" href="assets/css/register.css">
+  </head>
+
+  <!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title> ReciMarket</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="register.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Green - v4.8.0
+  * Template URL: https://bootstrapmade.com/green-free-one-page-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a th:href="@{/}"></a></h1>
+      <a th:href="@{/}" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+
+    </div>
+  </header><!-- End Header -->
+  <body>
+    <section class="form-login">
+      <h5>Inicio de Sesión</h5>
+      <input class="controls" type="text" name="usuario" value="" placeholder="Usuario o correo electronico">
+      <input class="controls" type="password" name="contrasena" value="" placeholder="Contraseña">
+      <!--<a class="buttons" a class="getstarted scrollto" th:href="@{/perfil}" > <input class="buttons" type="submit" name="" value="Ingresar"> -->
+      <div>
+      <input type="submit" class="btn btn-primary" id="register-btn" value="Ingresar" />
+
+      <div id="register-error" class="alert alert-danger d-none" role="alert"></div>
+      <div>
+      <a th:href="@{/registro}">No tienes una cuenta. Registrate aqui</a>
+      </div>
+             
+      <p><a href="#">¿Olvidaste tu Contraseña?</a></p>
+
+
+ 
+
+
+
+    </section>
+
+  </body>
+</html>
